@@ -1,0 +1,11 @@
+*.db
+templates/edit.html
+models.py
+routes.py
+templates/base.html
+new.py
+## Static folder contains images and videos only.
+## No local css or js file is used.
+*static/*
+__pycache__/
+# .gitignore will be ignored later
