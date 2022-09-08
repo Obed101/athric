@@ -1,6 +1,6 @@
 
 ######
-Lines 1 to 72 added to gitignore
+# Lines 1 to 72 added to gitignore
 ######
 
 @app.route('/users/<int:id>/password/reset')
