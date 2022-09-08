@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+
+            <!-- Search Bar / Button -->
+<form method="post" class="w-50 position-fixed" style='top:20px; right:25%;z-index:1999'>
+{{ form.search(placeholder='Start searching...', class='smallHidden w-100 alert-success border-success py-1',style='border:none') }}
+</form>
+{% if form.is_submitted() %} <div class="h4 text-center py-2">
+    {% if count %}
+    {{ count }} article{{ 's contain' if not count == 1 else ' contains' }} "{{ form.search.data }}"
+</div> 
+{% else %} <div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
+{% endif %}
+{% endif %}
+            <!-- Search Icon -->
+<div class="btn border border-dark smallShow fa fa-search p-2 rounded-circle fa-2x text-white position-fixed"
+    style="bottom:.9%; right:10%;z-index:1999;opacity: .6;" onclick="showSearch()">
+</div>
+                <!-- Search utility end -->
+
+<div class="container d-flex flex-wrap m-3 mx-auto small100" style="max-width: 90%; min-height: 200px;">
+    
+    <!-- Listing articles -->
+    {% for article in articles.items %}
+    <div class='m-3 small100 col-md-5 bg-light border p-2 hover'>
+        <!-- Menu Icon And Drop Down -->
+        {% if current_user.role in admins or current_user.id == article.user_id %}
+        <div class="a dropleft d-inline float-right">
+            <div class="fa fa-ellipsis-v p-1" data-toggle="dropdown"><br></div>
+            <ul class="dropdown-menu p-2 text-success" role="menu">
+                <li><a href="{{ url_for('edit_article', id=article.id) }}" title="Edit" class="w-100 py-1 fa fa-edit">
+                        Edit</a></li>
+                <li><a href="articles/{{ article.id }}/delete" title="Delete" class="w-100 fa fa-trash-alt py-1">
+                        Delete</a></li>
+            </ul>
+        </div>
+        {% endif %}
+
+        <a href="articles/{{ article.id }}/view">
+            <div class="text-dark p-1 w-100 font-weight-bold" title="Open this article">
+                {{ article.subject|capitalize|truncate(24) }}
+            </div>
+        </a>
+
+        <div class="flex mb-0 row ml-0 w-100">
+            <div class="float-left" style="width: 22%;">
+                <a href="articles/{{ article.id }}/view" title="Open this article"
+                    style="max-height:fit-content;left: 0;">
+                    <img src="{{ article.cover }}" alt="Cover image" class="w-100" style="max-height: .8in;">
+                </a>
+            </div>
+
+            <a href="articles/{{ article.id }}/view" class="w-75 float-right text-dark ml-1 small"
+                title="Open this article">
+                <div style="font-size:14px;">{{ article.message|striptags|safe|truncate(100) }}</div>
+            </a>
+        </div>
+
+        <div class="float-left font-weight-light">
+            {% if article.user_id %} {{ User.query.filter_by(id=article.user_id).first().fullname or 'Deleted user' }}
+            {% else %} Auto Generated {% endif %}
+        </div>
+        <div class="float-right" style="bottom: 3%; right: 5%;">{{ article.date }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- pagination -->
+<nav aria-label="navigation" class="mr-5">
+    <ul class="pagination justify-content-end py-3">
+        <li class="page-item {% if articles.page == 1 %}disabled{% endif %}">
+            <a href="/articles?page={{ articles.prev_num }}" class="page-link">Prev</a>
+        </li>
+
+        {% for page_num in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+        {% if page_num %}
+        {% if articles.page == page_num %}
+        <li class="page-item"><a class="page-link" href="/articles?page={{ page_num}}">{{ page_num }}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="/articles?page={{ page_num}}">{{ page_num }}</a></li>
+        {% endif %}
+        {% else %}
+        <span class="fa fa-ellipsis-h mx-1 pt-4 text-muted"></span>
+        {% endif %}
+        {% endfor %}
+
+        <li class="page-item {% if articles.page == articles.pages %}disabled{% endif %}">
+            <a class="page-link" href="/articles?page={{ articles.next_num }}">Next</a>
+        </li>
+    </ul>
+</nav>
+
+
+<div class="h4 w-100 ml-5 pl-5 my-3">Cagetories</div>
+{% for cate in categories %}
+<a href="{{ url_for('article_categories', category=cate) }}" class="d-block w-100 ml-5">{{cate.replace('_', ' ')|capitalize}}s</a>
+{% endfor %}
+<!-- Add new Article button -->
+<a href="{{ url_for('new_article') }}">
+    <div class="btn text-success position-fixed fa fa-plus-circle fa-3x add"
+        style="right: 10%; bottom:30px;z-index: 5;opacity: .6;"></div>
+</a>
+{% endblock %}
+
+
+

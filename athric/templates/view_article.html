@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="position-fixed btn btn-success p-3 fa fa-arrow-left rounded-circle ml-3 add" title="Go back"
+    onclick="history.back()" style='opacity:.5;z-index: 50;bottom:10px;'></div>
+
+<a target="_blank" {% if article.unique_name %} href="/articles/cover/{{ article.unique_name}} " {% else %}
+    href="/articles/cover/{{ article.cover.split('\\')[-1] }}" {% endif %}>
+    <img style="max-height: 4in;" class="w-100" src="/{{ article.cover }}">
+</a>
+
+<div class="position-relative text-center mx-auto w-100">
+    <h1 class="p-4 text-center position-relative font-weight-bold text-dark text-uppercase"
+        style="font-family: montserrat;">{{ article.subject }}
+        <p class="text-center h6 text-muted">({% if article.user_id %}by {{
+            User.query.filter_by(id=article.user_id).first().fullname or 'Athric' }}
+            {% else %} Auto Generated {% endif %})</p>
+    </h1>
+</div>
+
+<div class="m-5 h5 mb-4 green" style="min-height:100px;font-family: montserrat;">{{ article.message|safe }}</div>
+{% if current_user.id == article.user_id or not article.user_id and current_user.role %}
+<a href="/articles/{{ article.id }}/delete"
+    class="btn btn-success border position-relative fa fa-trash-alt rounded-circle p-3 float-right mr-5 mt-2"
+    style="right: 0%; bottom: 20px" title="Delete this article"></a>
+</a>
+{% endif %}
+
+<style>
+    .green a {
+        color: darkgreen !important;
+    }
+
+    .green a:hover {
+        color: blue !important;
+    }
+</style>
+{% endblock %}

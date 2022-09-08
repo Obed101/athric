@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="border-bottom p-4 mx-auto bg-light text-center font-weight-bold">
+  {{ title|capitalize }} uploaded
+  {% if title in ['documents', 'videos'] %} <p class="small h6 pt-1">Click a {{ title[:-1] }}'s name to view details</p>
+  {% endif %}
+</h4>
+
+<!-- If the file type is Video... -->
+{% if title == 'videos' %}
+{% for file in files %}
+<div class="col-md d-inline-block p-0 m-2" style="width: fit-content;" title="{{ file.original_name }}">
+  <div class="text-center bg-dark py-1 text-white w-100 mx-auto" style="top:0;z-index: 3;">
+    <a href="{{ url_for('view_file', category=file.f_type, unique_name=file.u_name) }}">
+      {{ file.original_name.split('.')[0].replace('_', ' ')|truncate(30) }}</a>
+    {% if current_user.role %}
+    <a href="/files/{{ file.f_type }}/{{ file.id }}/delete" class="text-white fa fa-times float-right m-1 mr-2"
+      title="Delete {{ file.original_name }}">
+    </a>
+    {% endif %}
+  </div>
+  <video height="200" controls type=video/mp4 class="w-100">
+    <source src="/{{ file.path }}">
+  </video>
+</div>
+{% endfor %}
+
+<!-- If the file type is Image... -->
+{% elif title == 'images' %}
+<div class="d-flex flex-wrap">
+  {% for file in files %}
+  <div class="text-center bg-dark py-1 text-white col-md-2 m-1 d-inline px-0 small" style="max-width:fit-content;">
+    <a href="{{ url_for('view_file', category=file.f_type, unique_name=file.u_name) }}">
+      <div class="absolute-top">{{ file.original_name.split('.')[0].replace('_', ' ')|capitalize|truncate(25) }}</div>
+      <img title="{{ file.original_name }}" height="120" src="/{{ file.path }}" alt="Image in gallery">
+    </a>
+    <a href="/files/{{ file.f_type }}/{{ file.id }}/delete"
+      class="position-absolute text-white fa fa-times float-right m-1 mr-2" title="Delete {{ file.original_name }}"
+      style="top: 0;right:0">
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- If the file type is Document... -->
+{% elif title == 'documents' %}
+{% for file in files %}
+<div class="text-center mt-4 ml-4 bg-dark text-white d-inline-block m-1" style="min-width: 45%;">
+  <a href="{{ url_for('view_file', category=file.f_type, unique_name=file.u_name) }}" class="w-100 py-2">{{
+    file.original_name.split('.')[0].replace('_', ' ')|capitalize|truncate(20) }} <i
+      class="small fa fa-external-link-alt"></i>
+  </a>
+  <iframe style="height:4in;" class="w-100" src="/{{ file.path }}" frameborder="0"></iframe>
+  <a href="/files/{{ file.f_type }}/{{ file.id }}/delete" target="_blank"
+    class="position-absolute text-white fa fa-times m-1 mr-2 float-right" title="Delete {{ file.original_name }}"
+    style="top: 0;right:0">
+  </a>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if current_user.role %}
+<a href="{{ url_for('upload_file') }}" class="text-success position-fixed fa fa-plus-circle fa-3x add"
+  style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;">
+</a>
+{% endif %}
+{% endblock %}

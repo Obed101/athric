@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="p-5 bg-light mx-auto border my-5" style="width:fit-content;min-width: 50%;">
+    {{ form.hidden_tag() }}
+    <h5 class="py-4 text-center h4">Send us a message</h5>
+    <form method="post">
+        {{ form.email(placeholder='Your email', class="col-md-5 d-inline p-2 alert-info mt-1", style="outline:0;border:0", value=current_user.email) }}
+        {{ form.name(placeholder='Your name 👐', class="col-md-6 float-right p-2 alert-info mt-1", style="outline:0;border:0", value=current_user.fullname) }}
+        {{ form.subject(placeholder='Message Subject', class="w-100 p-2 alert-info mt-1", style="outline:0;border:0") }}
+        <hr>
+        {{ ckeditor.create() }}
+        <div>
+            <div class="btn btn-light border-dark float-left m-2 px-3" onclick="history.back()">Cancel</div>
+            {{ form.submit(class='btn btn-primary m-2 float-right', onclick="this.value='Processing...'") }}
+        </div>
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='message') }}
+</div>
+{% endblock %}

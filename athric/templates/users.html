@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="border-bottom py-3 mx-auto bg-light text-center">
+    {% if all > 1 %} {{ all }} persons have account on Athric {% else %}
+    {{ all }} person has account on Athric {% endif %}
+</h4>
+<table class="table table-hover table-striped table-secondary mt-5 mx-auto small100 big-95">
+    <thead class="sticky-top bg-secondary text-white"style='top: 73px;' >
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Role</th>
+            {% if current_user.role in admins %}
+            <th scope="col">Action</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr class="my-2">
+            <td>{{ user.fullname }} {% if current_user == user %} &nbsp; (You) {% endif %}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.tel }} </td>
+            <td class='text-capitalize'>{{ user.role }}</td>
+            {% if current_user.role in admins %}
+            <td> {% if user.role not in admins or user.id %}
+                <a href="/users/{{ user.id }}/delete"><div title="Delete {{ user.fullname if not user == current_user else 'Yourself' }}" class="btn text-danger p-1 fa fa-trash-alt"></div></a>
+                {% endif %}
+                {% if not user.id == current_user.id %}
+                <a href="{{ url_for('reset_password', id=user.id) }}"><div title="Reset {{ user.fullname }}'s password" class="btn text-primary fa fa-undo"></div></a>
+                {% elif current_user == user %}
+                <a href="{{ url_for('profile') }}"><div class="btn text-primary fa fa-edit" title="Edit"></div></a>
+                {% endif %}
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> {% if current_user.role %}
+<a href="{{ url_for('users')}}" class="text-success position-fixed fa fa-plus-circle fa-3x add"
+style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;"></a>
+
+{% endif %}
+
+<p class="text-center mt-5">Please <a class="p-1 bg-light font-weight-bold " href="/notices/new">report</a> if you find someone with non-authorized role</p>
+
+{% endblock %}

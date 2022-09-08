@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h4 class="p-4 mx-auto bg-light text-center"> {{ file.f_type[:-1]|upper }} - {{ file.original_name|upper }} </h4>
+
+<div class="container mx-auto border-top w-100 flex-wrap py-4 border-bottom">
+  <!-- If the file type is Video... -->
+  {% if file.f_type == 'videos' %}
+  <div class="py-1 col-md-5 m-1 d-inline-block px-0" title="{{ file.original_name }}">
+    <video height="250" controls type="video/mp4" class="w-100">
+      <source src="/{{ file.path }}">
+    </video>
+  </div>
+
+  <!-- If the file type is Image... -->
+  {% elif file.f_type == 'images' %}
+  <div class="text-center py-1 col-md-5 m-1 d-inline-block px-0">
+    <img class="w-100" title="{{ file.original_name }}" height="220" src="/{{ file.path }}" alt="">
+  </div>
+  {% endif %}
+
+  <!-- Displaying the file description -->
+  <div class="col-md-6 ml-2 border-left float-right small100">
+    <div class="w-100 bg-light text-center py-2">{{ file.original_name }}</div>
+    {{ file.message|safe }}
+    <span class="small float-right mt-2">{{ User.query.filter_by(id=file.user_id).first().fullname or 'Author removed' }}</span>
+    <span class="small text-muted">{{ file.date }} </span>
+  </div>
+</div>
+
+      <!-- Other files displayed below the page-->
+<div class="text-center h2 mt-5">Other Files</div>
+<div class="mx-auto my-3 d-flex flex-wrap">
+  {% for typ in ['images', 'videos', 'documents'] %}
+  <div class="col-md-3 p-2 hover m-3 small100 border">
+    <div class="text-center font-weight-bold">{{ typ|capitalize }} </div>
+    {% for n, f in enumerate(all.query.filter_by(f_type=typ).all()) %}
+    <!-- Displaying up to 3 items and making sure the current file is not included -->
+    {% if not f.id == file.id and n < 3 %}
+    <a href="{{ url_for('view_file', category=f.f_type, unique_name=f.u_name) }}" class="text-success ml-5 d-block py-1"
+      title="{{ f.original_name }}">{{ f.original_name|truncate(30) }}
+    </a>
+    {% endif %}
+    {% endfor %}
+    <a href="{{ url_for('gallery', category=typ) }}" class="position-relative mr-3 p-2 float-right">More</a>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="position-fixed btn btn-success p-3 fa fa-arrow-left rounded-circle ml-3 add" title="Go back"
+  onclick="history.back()" style='opacity:.5;z-index:5;bottom:10px;'></div>
+
+{% if current_user.role %}
+<a href="{{ url_for('upload_file') }}" class="btn btn-success float-right mx-5 add"> Upload a file
+</a>
+
+<a href="{{ url_for('delete_file', category=file.f_type, id=file.id) }}" class="btn border-dark float-left mx-5 add">
+  Delete this file
+</a>
+{% endif %}
+{% endblock %}

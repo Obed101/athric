@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{{ form.hidden_tag() }}
+
+<div class="p-5 bg-light mt-2 m-auto border" style="width: fit-content;">
+  <h2 class="font-weight-bold text-center">Create a new article</h2>
+  <form method="post" enctype="multipart/form-data">
+    <span>{{ form.cover(id='cover', style='display:none;') }}</span>
+    
+    {{form.subject(placeholder='A simple article title',size=25, class='btn-light my-2, py-1 small100') }}
+    <label for="cover" class='btn border-dark py-1 text-dark font-weight-bold small100'> Choose cover image (Large, Landscape)</label>
+    
+    <select name="category" class="d-block my-1" required>
+      <option value="">Select a category</option>
+      <option value="general_information">General Information</option>
+      <option value="project_report">Project Report</option>
+      <option value="other_information">Other Information</option>
+    </select>
+
+    {{ ckeditor.create() }}
+
+  <div onclick="history.back()" class="float-left bg-white mt-2 border-dark btn">Cancel</div>
+    {{ form.submit(class='btn btn-success float-right mt-2') }}
+  </form>
+  {{ ckeditor.load() }}
+  {{ ckeditor.config(name='message') }}
+</div>
+{% endblock %}

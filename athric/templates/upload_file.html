@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <link rel="stylesheet" href="##{{ url_for('static', filename='styles/login.css') }}"> -->
+<div class="p-5 bg-light mx-auto border my-5" style="width: fit-content;">
+    {{ form.hidden_tag() }}
+    <h5 class="py-4 text-center h3">Submit a file</h5>
+    <form method="post" enctype="multipart/form-data">
+        <p>
+            {{ form.content() }}
+        </p>
+        {{ form.f_name(placeholder='Type in a short file name', size=30) }} 
+        <hr>
+        {{ form.message.label }} <br>
+        {{ ckeditor.create() }}
+        <hr>
+        {{ form.category.label }}
+        {{ form.category }}
+        <!-- ##{{ ckeditor.create }} -->
+        <hr>
+        <div>
+            <div class="btn btn-light border float-left p-2" onclick="history.back()">Cancel</div>
+            {{ form.submit(class='btn btn-primary float-right') }}
+        </div> 
+    </form>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='message') }}
+</div>
+{% endblock %}

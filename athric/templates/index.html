@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for home in homes %}
+<div id="home" style="height:4in;background:url('{{ home.bg }}');background-size:cover;" class="slide w3-animate-left">
+  <h1 class="p-4 text-center position-relative font-weight-bold text-white text-uppercase"
+    style="top: 35%; bottom:30%;text-shadow: black 4px 2px 4px;font-family: montserrat;">{{ home.name }}
+    <p class="text-center h5 font-weight-bold">{{ home.description|safe }}</p>
+  </h1>
+</div>
+{% endfor %}
+
+
+<hr>
+{% if not current_user.is_active %}
+<div class="text-center h4 font-weight-bold">NEW HERE?</div>
+<div class="container mx-auto w-75 d-flex flex-wrap">
+  <a class="btn btn-info col-4 py-3 my-1 mx-auto" href="{{ url_for('login') }}" style='min-width: fit-content;'>
+    <div>Login To An Existing Account</div>
+  </a>
+  <a class="btn btn-info col-4 py-3 my-1 mx-auto" href="{{ url_for('signup') }}" style='min-width: fit-content;'>
+    <div>Create Your New Account</div>
+  </a>
+</div>
+{% endif %}
+<div class="h3 text-center pt-5 font-weight-bold">Find Our Popular Articles</div>
+<div class="container m-4 d-flex flex-wrap mx-auto w-100">
+  {% for article in articles[:3] %}
+  <div class='mx-auto col-md-3 hover'>
+    <a href="/articles/{{article.id}}/view">
+      <img src="{{ article.cover }}" class="d-inline-block bg-dark w-100" style="max-height: 1.5in;"></img>
+      <div class="h6 position-relative text-success" style="bottom: 0;">{{ article.subject|truncate(30) }}</div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<div class="container my-3">
+  <a href="{{ url_for('articles') }}" style='min-width: fit-content;' class="d-block btn btn-success w-25 mx-auto">
+    More articles...
+  </a>
+</div>
+<hr>
+
+<!-- CATEGORIES -->
+
+<div class="h3 text-center font-weight-bold d-block">Select from these categories</div>
+
+<div class="h5 text-center w-100 mt-3 font-weight-bold text-muted">📰 Articles</div>
+<div class="container m-4 d-flex mx-auto w-100">
+  {% for cate in gories %}
+  <div class='mx-auto col-md-2 hover'>
+    <a href="{{ url_for('article_categories', category=cate) }}">
+      <div class="d-inline-block border bg-light py-3 w-100">
+        <span class="text-center w-100 fa fa-info-circle fa-4x text-muted"></span>
+      </div>
+      <div class="h6 position-relative text-center" style="bottom: 0;">{{ cate.replace('_', ' ')|capitalize}}s</div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="h5 text-center w-100 mt-3 font-weight-bold text-muted">📁 Files</div>
+<div class="container m-4 d-flex mx-auto w-100">
+  {% for category in ['videos', 'images', 'documents'] %}
+  <div class='mx-auto col-md-2 hover'>
+    <a href="/files/{{ category }}">
+      <div class="d-inline-block border bg-light py-2 w-100 text-muted">
+        <span class="text-center w-100 fa fa-file-{{ category[:-1] if category in ['videos', 'images'] else 'pdf'}} fa-4x"></span>
+      </div>
+      <div class="h6 position-relative text-center" style="bottom: 0;">{{ category|capitalize}}</div>
+    </a>
+  </div>
+  {% endfor %}
+<hr></div>
+<div class="container my-5">
+  <a href="{{ url_for('contact') }}" style='min-width: fit-content;' class="d-block btn btn-info w-25 mx-auto fa-2x">
+    Contact us
+  </a>
+</div>
+
+  <div class="text-center d-block mx-auto h2 pt-4 pb-2">About Us</div>
+  <blockquote class="h5 px-5">
+    <div class="h3">Agriculture</div>
+    Agriculture in Ghana is recognised as the mainstay of the economy with a greater impact on poverty reduction than
+    other sectors. <br>It is also critical for rural development and associated cultural values, social stabilisation,
+    environmental sustainability and buffer during economic shocks. Based on the role of agriculture in the national
+    development framework, Food and Agriculture Sector Development Policy (FASDEP II) has the following as its <br> <br>
+    Objectives:<br>
+    <ol>
+      <li>Food security and emergency preparedness</li>
+      <li>Improved growth in incomes</li>
+      <li>Increased competitiveness and enhanced integration into domestic and international markets</li>
+      <li>Sustainable management of land and environment</li>
+      <li>Science and Technology Applied in food and agriculture development</li>
+      <li>Improved institutional Coordination</li>
+    </ol>
+  </blockquote>
+
+  {% endblock %}

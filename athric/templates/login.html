@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"> -->
+<div class="p-5 bg-light mx-auto border my-5" style="width: fit-content;">
+    {{ form.hidden_tag() }}
+    <h5 class="py-4 text-center h3"> Login To Athric</h5>
+    <form method="post">
+        <p>
+            {{ form.email(size=40, placeholder='Your email address') }}
+        </p>
+        <hr>
+
+        {{ form.password(size=40, placeholder='Your password', required='required')}} <br>
+        <div>
+            <div class="btn btn-light border float-left m-3 p-2" onclick="history.back()">Cancel</div>
+            {{ form.submit(class='btn btn-primary m-3 float-right') }}
+        </div> 
+        <a href="{{ url_for('signup')}} " class="mt-5 d-inline-block">Create an account</a>
+    </form>
+</div>
+{% endblock %}
