@@ -8,8 +8,6 @@ import os
 from flask_mail import Mail
 
 
-# u = os.environ.setdefault('ANSAH_GMAIL', 'ericansah219@gmail.com')
-# u = os.environ.setdefault('gmail_password', 'lbwwckhqmvhginkz')
 app = Flask(__name__)
 
 app.config['CKEDITOR_PKG_TYPE'] = 'basic'
@@ -20,7 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ## Mail configurations ##
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-# app.config['TESTING'] = True
+app.config['TESTING'] = True
 app.config['SECURITY_EMAIL_SENDER'] = os.getenv('ansah_gmail')
 app.config['MAIL_USERNAME'] = os.getenv('ansah_gmail')
 app.config['MAIL_PASSWORD'] = os.getenv('gmail_password')
@@ -32,7 +30,6 @@ ckeditor = CKEditor(app)
 search = Search()
 search.init_app(app)
 mail = Mail(app)
-
 
 
 def change_in_db(old, new):
@@ -50,7 +47,7 @@ def change_in_db(old, new):
     db.session.commit()
     return old
 
-admins = ['manager', 'superviser']
+admins = ['director', 'manager', 'superviser']
 at_categories = ['general_information', 'project_report', 'other_information']
 
 homes = [

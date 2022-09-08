@@ -47,9 +47,9 @@
 <div class="h5 text-center w-100 mt-3 font-weight-bold text-muted">📰 Articles</div>
 <div class="container m-4 d-flex mx-auto w-100">
   {% for cate in gories %}
-  <div class='mx-auto col-md-2 hover'>
+  <div class='mx-auto col-md-2 hover pt-1' style='box-shadow:0 0 3px'>
     <a href="{{ url_for('article_categories', category=cate) }}">
-      <div class="d-inline-block border bg-light py-3 w-100">
+      <div class="d-inline-block border bg-light py-3 w-100" style="border-radius:12px;">
         <span class="text-center w-100 fa fa-info-circle fa-4x text-muted"></span>
       </div>
       <div class="h6 position-relative text-center" style="bottom: 0;">{{ cate.replace('_', ' ')|capitalize}}s</div>
@@ -61,9 +61,9 @@
 <div class="h5 text-center w-100 mt-3 font-weight-bold text-muted">📁 Files</div>
 <div class="container m-4 d-flex mx-auto w-100">
   {% for category in ['videos', 'images', 'documents'] %}
-  <div class='mx-auto col-md-2 hover'>
+  <div class='mx-auto col-md-2 hover pt-1' style='box-shadow:0 0 2px'>
     <a href="/files/{{ category }}">
-      <div class="d-inline-block border bg-light py-2 w-100 text-muted">
+      <div class="d-inline-block border bg-light py-2 w-100 text-muted" style="border-radius:12px;">
         <span class="text-center w-100 fa fa-file-{{ category[:-1] if category in ['videos', 'images'] else 'pdf'}} fa-4x"></span>
       </div>
       <div class="h6 position-relative text-center" style="bottom: 0;">{{ category|capitalize}}</div>

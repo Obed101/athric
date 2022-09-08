@@ -7,9 +7,11 @@
 </form>
 {% if form.is_submitted() %} <div class="h4 text-center py-2">
     {% if count %}
+                                    <!-- Grammer  -->
     {{ count }} article{{ 's contain' if not count == 1 else ' contains' }} "{{ form.search.data }}"
 </div> 
-{% else %} <div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
+{% else %}
+<div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
 {% endif %}
 {% endif %}
             <!-- Search Icon -->
@@ -19,7 +21,7 @@
                 <!-- Search utility end -->
 
 <div class="container d-flex flex-wrap m-3 mx-auto small100" style="max-width: 90%; min-height: 200px;">
-    
+
     <!-- Listing articles -->
     {% for article in articles.items %}
     <div class='m-3 small100 col-md-5 bg-light border p-2 hover'>
@@ -102,6 +104,4 @@
         style="right: 10%; bottom:30px;z-index: 5;opacity: .6;"></div>
 </a>
 {% endblock %}
-
-
 

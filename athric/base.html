@@ -49,50 +49,10 @@
         <ul class="dropdown-menu text-white bg-secondary p-1 border-light" role="menu">
           <li>📰 Articles</li>
           <li class="dropdown-divider"></li>
-          <li><a href="/articles/categories/general_information" title="Gemeral Informations"
-              class="fa fa-bell small p-2 w-100">
-              General Informations</a>
-          </li>
-          <li><a href="/articles/categories/project_report" title="Projects" class="fa fa-chart-bar small p-2 w-100">
-              Project Reports</a>
-          </li>
-          <li><a href="/articles/categories/other_information" title="Other Informations"
-              class="fa fa-map small p-2 w-100"> Other Informations</a></li>
-          <li><a href="/articles" title="All Articles" class="fa fa-newspaper small p-2 w-100"> All Articles</a></li>
-        </ul>
-      </div>
+          
+<!---------------Lines 52 to 94 added to gitignore ------------------>
 
-      <div class="a dropup inline">
-        <div class="s-bar text-center inline" data-toggle="dropdown" title="Files">📁</div>
-        <ul class="dropdown-menu text-white bg-secondary p-1 border-light" role="menu">
-          <li>📁 Files</li>
-          <li class="dropdown-divider"></li>
-          <li><a href="{{ url_for('gallery', category='videos') }}" class="fa fa-play small p-2"> Videos</a></li>
-          <li><a href="{{ url_for('gallery', category='images') }}" class="fa fa-image small p-2"> Images</a></li>
-          <li><a href="{{ url_for('gallery', category='documents') }}" class="fa fa-file-alt small p-2"> Documents</a>
-          </li>
-        </ul>
-      </div>
-
-      {% if current_user.is_authenticated %}
-      <div class="a dropup text-center inline down" title="{{ current_user.fullname }}">
-        <div class="py-3 s-bar" data-toggle="dropdown">👨‍💼</div>
-        <ul class="dropdown-menu text-white bg-secondary p-1 border-light" role="menu">
-		<li>👨‍💼 {{ current_user.fullname }}</li>
-          <li class="dropdown-divider"></li>
-          <li><a href="{{ url_for('profile') }}" title="Edit your account" class="fa fa-user-edit small p-2 w-100"> Edit
-              Your
-              Account</a></li>
-          <li><a href="{{ url_for('users') }}" title="All users" class="fa fa-users small p-2 w-100"> All Users</a></li>
-          <li><a href="{{ url_for('logout') }}" title="Log Out" class="fa fa-sign-out-alt small p-2 w-100"> Log Out</a>
-          </li>
-        </ul>
-      </div>
-      {% else %}
-      <a href="{{ url_for('login') }}" title="Login" class="fa fa-sign-in-alt text-center s-bar"></a>
-      {% endif %}
-    </div>
-
+<!---------------Lines 52 to 94 added to gitignore ------------------>
 
     <div class="position-static small100 big-95" style="right:0;margin-top:-2%;">
       <!-- Small Animated messages displayed at the top -->
@@ -128,7 +88,7 @@
     }
     .hover:hover {
 	    transform: scale(1.01);
-      box-shadow: grey 0px 6px 5px!important;
+      box-shadow: grey 0px 6px 5px;
     }
 
     a:hover,
@@ -157,7 +117,6 @@
         left: 0;
         margin-top: -2%;
         height: 100%;
-        min-width: 45px;
       }
 
       .s-bar {
@@ -178,20 +137,9 @@
 
     /* Small size media */
     @media screen and (max-width: 800px) {
-      #sidebar {
-        bottom: 0;
-        width: 100%;
-        height: 50px;
-        flex-wrap: wrap;
-        padding-bottom: 50px;
-      }
+      
+/********************Lines 140 to 153 added to gitignore *******************/
 
-      .s-bar {
-        max-width: fit-content;
-        display: inline;
-        padding: 3%;
-        font-size: xx-large;
-      }
 
       .inline {
         display: inline;

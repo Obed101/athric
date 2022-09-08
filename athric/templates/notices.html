@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<h4 class="p-4 h2 text-center text-bold bg-light">Notice Board</h4>
+<h2 class="p-4 h2 text-center bg-light">Notice Board
+<p class="small text-muted text-center">The fastest way to alert all staff</p></h2>
 
 <!-- All Notices -->
 {% for note in notices.items %}
-<div class="border w-75 p-3 m-3 mx-auto small100">
-  <div class='bg-info p-3 w-100 text-white' style="width: fit-content;">{{ note.subject }} &nbsp;
+<div class="border border-info w-75 p-3 m-3 mx-auto small100" style="border-radius:16px;">
+  <div class='bg-info p-3 w-100 text-white font-weight-bold'
+      style="width:fit-content;border-radius:16px 16px 0 0;">{{ note.subject|capitalize }} &nbsp;
     {% if current_user.role in admins or current_user.id == note.user_id %}
     <div class="a dropleft d-inline float-right">
       <div class="fa fa-ellipsis-v p-1" data-toggle="dropdown"><br></div>
@@ -24,6 +26,7 @@
   <div class="float-right small"> {{ note.date }} </div>
 </div>
 {% endfor %}
+
 <!-- Pagination -->
 <nav aria-label="navigation" class="mr-5">
   <ul class="pagination justify-content-end py-3">
@@ -49,7 +52,6 @@
   </ul>
 </nav>
 <hr>
-
 <div class="mx-5">
   <a href="{{ url_for('new_notice') }}">
     <div class="btn text-info position-fixed fa fa-plus-circle fa-3x add"

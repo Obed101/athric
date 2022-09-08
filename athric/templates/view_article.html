@@ -14,7 +14,7 @@
     <h1 class="p-4 text-center position-relative font-weight-bold text-dark text-uppercase"
         style="font-family: montserrat;">{{ article.subject }}
         <p class="text-center h6 text-muted">({% if article.user_id %}by {{
-            User.query.filter_by(id=article.user_id).first().fullname or 'Athric' }}
+            User.query.filter_by(id=article.user_id).first().fullname or 'a deleted user' }}
             {% else %} Auto Generated {% endif %})</p>
     </h1>
 </div>
@@ -31,9 +31,9 @@
     .green a {
         color: darkgreen !important;
     }
-
     .green a:hover {
         color: blue !important;
+        text-decoration: underline dotted;
     }
 </style>
 {% endblock %}
