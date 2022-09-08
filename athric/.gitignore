@@ -1,7 +1,9 @@
+update_all
 *.db
 edit.html
 models.py
 routes.py
+templates/base.html
 ## Static folder contains images and videos only.
 ## No local css or js file is used.
 *static/ 

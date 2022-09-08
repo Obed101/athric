@@ -1,9 +1,10 @@
 *.db
-templates/edit.html
-models.py
-routes.py
-templates/base.html
-new.py
+athric/templates/edit.html
+athric/models.py
+athric/routes.py
+athric/templates/base.html
+
+athric/new.py
 ## Static folder contains images and videos only.
 ## No local css or js file is used.
 *static/*
