@@ -1,74 +1,7 @@
-from faker import Faker
-import random
-import os
-from flask_mail import Message
-from models import User, Article, Notice, File
-# from werkzeug.utils import secure_filename  # Later implementation
-from flask_login import login_required, login_user, logout_user, current_user
-from flask import render_template, url_for, redirect, flash, request, send_from_directory
-from utils import app, db, change_in_db, ckeditor, homes, admins, at_categories, mail
-from forms import NewArticle, NoticeForm, UserForm, UploadFile, Search, Contact
-from uuid import uuid4
 
-
-@app.route('/')
-def index():
-    """Home page"""
-    articles = Article.query.order_by(Article.id.desc()).all()
-    return render_template('index.html', title='Home', articles=articles, homes=homes, gories=at_categories)
-
-
-@app.errorhandler(404)
-def not_found(_):
-    return render_template('404.html'), 404
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    """Logs in a user"""
-    if current_user.is_authenticated:
-        flash('You are already logged in')
-        return redirect(url_for('index'))
-    form = UserForm()
-    if form.is_submitted():
-        user = User.query.filter_by(email=form.email.data).first()
-        if not user or not user.check_password(form.password.data):
-            flash('Invalid email or password')
-            return redirect(url_for('login'))
-        login_user(user, True)
-        flash(f'You are now logged in as {current_user.fullname}')
-        return redirect(request.args.get('next')) if request.args.get('next') else redirect(url_for('index'))
-    return render_template('login.html', form=form, title='Login', homes=homes)
-
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    """Creates a user account"""
-    if current_user.is_authenticated:
-        flash('You are already logged in')
-        return redirect(url_for('index'))
-    form = UserForm()
-    if form.is_submitted():
-        user = User(firstname=form.firstname.data, lastname=form.lastname.data,
-                    email=form.email.data, tel=form.tel.data, role=form.role.data)
-        user.password, user.fullname = user.set_password(
-            form.password.data), user.set_fullname()
-        db.session.add(user)
-        db.session.commit()
-        login_user(user, True)
-        flash('Your account has been created successfully')
-        return redirect(url_for('index'))
-    return render_template('signup.html', form=form, title='Create an account', homes=homes)
-
-
-@app.route('/users')
-# @login_required
-def users():
-    number_of_users = User.query.count()
-    """Returns all users"""
-    users = User.query.all()
-    return render_template('users.html', users=users, admins=admins, title='All users', all=number_of_users, homes=homes)
-
+######
+# Lines 1 to 72 added to gitignore
+######
 
 @app.route('/users/<int:id>/password/reset')
 @login_required
@@ -221,7 +154,7 @@ Email: {email}<br><br>Best regards, <br>Athric <br><br><br><br>
                 subject = f"Someone contacted you from Athric"
                 msg = Message(subject, sender=('Athric', os.getenv('ansah_gmail')), recipients=[user.email], html=message)
                 conn.send(msg)
-            ###### Saving to the notices
+            ###### Saving to the notices #######
             note = Notice(subject=form.subject.data, message=request.form.get(
                 'ckeditor'), user_id=current_user.id)
             db.session.add(note)
@@ -309,26 +242,7 @@ def article_categories(category):
     return render_template('article_categories.html', title=category.replace('_', ' ')+'s', homes=homes, articles=articles, User=User)
 
 
-@app.route('/articles/<id>/delete')
-@login_required
-def del_article(id):
-    """Deletes an article if priveleges are met"""
-    try:
-        article = Article.query.filter_by(id=id).first()
-        if article.user_id == current_user.id or current_user.role in admins:
-            article.delete()
-            db.session.commit()
-        else:
-            flash('You cannot delete that article')
-            return redirect(url_for('articles'))
-        if os.path.exists(article.cover) and not article.cover == os.path.join('static', 'images', 'post_default.jpg'):
-            os.remove(article.cover)
-    except AttributeError:
-        flash('That article doesn\'t exist anymore')
-        return redirect(url_for('articles'))
-    flash('Article deleted successfully')
-    return redirect(url_for('articles'))
-
+#### Lines 245 to 264 added to gitignore ####
 
 @app.route('/files/upload', methods=['GET', 'POST'])
 @login_required
@@ -382,21 +296,6 @@ def delete_file(category, id):
     else:
         flash('file doesn not exist')
     return redirect(url_for('gallery', category=category))
-
-
-note = Notice(subject='A new Notice for testing',
-              message='This is the sample notice message <br> New notices will display like this')
-db.session.add(note) if 1 == random.randint(1, 19) else print()
-db.session.commit()
-
-fake = Faker()
-
-# u = User(firstname=fake.first_name(),
-#          lastname=fake.last_name(), email=fake.email())
-# u.password, u.fullname, u.role, u.tel = u.set_password(
-#     'mm'), u.set_fullname(), random.choice(['manager', 'other', 'superviser', 'user']), fake.phone_number()
-# db.session.add(u)
-# db.session.commit()
 
 
 if __name__ == '__main__':
