@@ -6,7 +6,8 @@ from flask_msearch import Search
 from werkzeug.security import check_password_hash
 import os
 from flask_mail import Mail
-
+os.environ.setdefault('ANSAH_GMAIL', 'ansaheric219@gmail.com')
+os.environ.setdefault('gmail_password', 'lbwwckhqmvhginkz')
 
 app = Flask(__name__)
 
@@ -18,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ## Mail configurations ##
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['TESTING'] = True
+# app.config['TESTING'] = True
 app.config['SECURITY_EMAIL_SENDER'] = os.getenv('ansah_gmail')
 app.config['MAIL_USERNAME'] = os.getenv('ansah_gmail')
 app.config['MAIL_PASSWORD'] = os.getenv('gmail_password')

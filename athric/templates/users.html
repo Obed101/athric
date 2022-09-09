@@ -38,7 +38,7 @@
         {% endfor %}
     </tbody>
 </table> {% if current_user.role %}
-<a href="{{ url_for('users')}}" class="text-success position-fixed fa fa-plus-circle fa-3x add"
+<a href="{{ url_for('add_user')}}" class="text-success position-fixed fa fa-plus-circle fa-3x add"
 style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;"></a>
 
 {% endif %}
