@@ -7,5 +7,5 @@ This is a real world project. Therefore, for security and privacy reasons, some 
 > Setup and Installation NOT given out
 
 ## How To Use - Step-by-step
->> The documentation will be available soon
+>> The documentation will be available here soon
 
