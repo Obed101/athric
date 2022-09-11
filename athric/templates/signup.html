@@ -11,23 +11,10 @@
                 <p>
                     {{ form.email(size=40, placeholder='Your email address', class='mt-3') }}<br>
                 </p>
-                <p> {{ form.tel.label }}:
-                    {{ form.tel(placeholder='+233243456789') }}
-                </p>
 
-                {{ form.role.label }}:
-                <select name="role" id="role" style="width: 100px;">
-                    <option value="director">Director</option>
-                    <option value="manager">Manager</option>
-                    <option value="superviser">Superviser</option>
-                    <option value="officer">Officer</option>
-                    <option value="other">Other</option>
-                </select>
                 <p>
                     {{ form.password(size=40, placeholder='password', required='required') }}<br>
-                </p>
-                <p> 
-                    {{ form.confirm(size=40, class='b-none', placeholder='Repeat the password') }}<br>
+                    {{ form.confirm(size=40, class='mt-1', placeholder='Repeat the password') }}<br>
                 </p>
 
                 <div><div class="btn btn-light border float-left m-3 p-2" onclick="history.back()">Cancel</div>

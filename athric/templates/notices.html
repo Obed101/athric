@@ -6,7 +6,7 @@
 <!-- All Notices -->
 {% for note in notices.items %}
 <div class="border border-info w-75 p-3 m-3 mx-auto small100" style="border-radius:16px;">
-  <div class='bg-info p-3 w-100 text-white font-weight-bold'
+  <div class="{{'bg-dark' if ' - Contact' in note.subject or 'requesting an account' in note.subject else 'bg-info'}} p-3 w-100 text-white font-weight-bold"
       style="width:fit-content;border-radius:16px 16px 0 0;">{{ note.subject }} &nbsp;
     {% if current_user.role in admins or current_user.id == note.user_id %}
     <div class="a dropleft d-inline float-right">
