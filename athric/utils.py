@@ -10,8 +10,6 @@ from flask_msearch import Search
 from werkzeug.security import check_password_hash
 import os
 from flask_mail import Mail
-os.environ.setdefault('ANSAH_GMAIL', 'ansaheric219@gmail.com')
-os.environ.setdefault('gmail_password', 'lbwwckhqmvhginkz')
 
 app = Flask(__name__)
 
