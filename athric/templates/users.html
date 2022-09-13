@@ -5,7 +5,7 @@
     {{ all }} person has account on Athric {% endif %}
 </h4>
 <table class="table table-hover table-striped table-secondary mt-5 mx-auto small100 big-95">
-    <thead class="sticky-top bg-secondary text-white"style='top: 73px;' >
+    <thead class="sticky-top bg-secondary text-white"style='top: 73px;'>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -20,15 +20,15 @@
         {% for user in users %}
         <tr class="my-2">
             <td>{{ user.fullname }} {% if current_user == user %} &nbsp; (You) {% endif %}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.tel }} </td>
-            <td class='text-capitalize'>{{ user.role }}</td>
+            <td class="border-left">{{ user.email }}</td>
+            <td class="border-left">{{ user.tel or '' }} </td>
+            <td class='text-capitalize border-left'>{{ user.role or '' }}</td>
             {% if current_user.role in admins %}
-            <td> {% if user.role not in admins or user.id %}
-                <a href="/users/{{ user.id }}/delete"><div title="Delete {{ user.fullname if not user == current_user else 'Yourself' }}" class="btn text-danger p-1 fa fa-trash-alt"></div></a>
+            <td class="border-left"> {% if user.role not in admins %}
+                <a href="/users/{{ user.id }}/delete" onclick="return confirm('Delete {{user.fullname}}\'s account?\nYou can\'t undo after deleting');"><div title="Delete {{ user.fullname if not user == current_user else 'Yourself' }}" class="btn text-danger p-1 fa fa-trash-alt"></div></a>
                 {% endif %}
                 {% if not user.id == current_user.id %}
-                <a href="{{ url_for('reset_password', id=user.id) }}"><div title="Reset {{ user.fullname }}'s password" class="btn text-primary fa fa-undo"></div></a>
+                <a href="{{ url_for('reset_password', id=user.id) }}" onclick="return confirm('You are resetting {{user.fullname}}\'s password\nYou can\'t undo after proceeding');"><div title="Reset {{ user.fullname }}'s password" class="btn text-primary fa fa-undo"></div></a>
                 {% elif current_user == user %}
                 <a href="{{ url_for('profile') }}"><div class="btn text-primary fa fa-edit" title="Edit"></div></a>
                 {% endif %}

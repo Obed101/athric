@@ -2,8 +2,8 @@
 {% block content %}
         <div style="width: fit-content;" class="p-4 bg-light mx-auto border px-5 my-4">
             <p class="workf"> Please fill this form to create your account</p>
-            {{ form.hidden_tag() }}
             <form method="post">
+            {{ form.hidden_tag() }} {{ form.csrf_token }}
                 <p>
                     {{ form.firstname(size=40, placeholder='Your first name. Example: John') }}<br>
                 </p>

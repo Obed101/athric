@@ -3,7 +3,7 @@
 <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"> -->
 <div class="p-5 bg-light mx-auto border my-5" style="width: fit-content;">
     {{ form.hidden_tag() }}
-    <h5 class="py-4 text-center h4 text-info">Request an official account</h5>
+    <h5 class="py-4 text-center h4 text-info">Request a Staff Account <p class="small text-muted">Will be reviewed by administrators</p></h5>
     
     <form method="post" class="pb-5">
         {{ form.firstname(size=40, placeholder='Your full name', required='required') }}

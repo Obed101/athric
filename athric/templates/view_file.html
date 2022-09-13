@@ -33,11 +33,13 @@
   {% for typ in ['images', 'videos', 'documents'] %}
   <div class="col-md-3 p-2 hover m-3 small100 border">
     <div class="text-center font-weight-bold">{{ typ|capitalize }} </div>
-    {% for n, f in enumerate(all.query.filter_by(f_type=typ).all()) %}
-    <!-- Displaying up to 3 items and making sure the current file is not included -->
+    {% for n, f in enumerate(all.query.filter_by(f_type=typ).order_by(all.id.desc()).all()) %}
+    <!---------------------------------------------------
+      Displaying up to 3 items and making sure the current file is not included
+    ----------------------------------------------------->
     {% if not f.id == file.id and n < 3 %}
     <a href="{{ url_for('view_file', category=f.f_type, unique_name=f.u_name) }}" class="text-success ml-5 d-block py-1"
-      title="{{ f.original_name }}">{{ f.original_name|truncate(30) }}
+      title="{{ f.original_name }}">{{ f.original_name.split('.')[0].replace('_', ' ')|truncate(30) }}
     </a>
     {% endif %}
     {% endfor %}
@@ -54,7 +56,7 @@
 </a>
 
 <a href="{{ url_for('delete_file', category=file.f_type, id=file.id) }}" class="btn border-dark float-left mx-5 add">
-  Delete this file
+  Delete this {{file.f_type[:-1]}}
 </a>
 {% endif %}
 {% endblock %}

@@ -13,7 +13,7 @@ class UserForm(FlaskForm):
     role = StringField('Your current role')
     tel = StringField('Your phone number', [Length(10, 12, 'Number is invalid')])
     password = PasswordField('Your password')
-    confirm = PasswordField('Type your password again', [EqualTo(password)])
+    confirm = PasswordField('Type your password again', [EqualTo('password')])
     submit = SubmitField('Login')
 
 class Contact(FlaskForm):
@@ -45,7 +45,7 @@ class UploadFile(FlaskForm):
 
 
 class Search(FlaskForm):
-    search = SearchField(validators=[required(message='_')])
+    search = SearchField()
     submit = SubmitField()
 
 class NoticeForm(FlaskForm):

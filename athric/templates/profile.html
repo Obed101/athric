@@ -5,20 +5,20 @@
             {{ form.hidden_tag() }}
             <form method="post">
                 <p>
-                    {{ form.firstname(size=40, value=current_user.firstname) }}<br>
+                    {{ form.firstname(size=40, value=current_user.firstname, class='alert-info p-2', style="outline:0;border:0") }}<br>
                 </p>
-                    {{ form.lastname(size=40, value=current_user.lastname) }}<br>
+                    {{ form.lastname(size=40, value=current_user.lastname, class='alert-info p-2', style="outline:0;border:0") }}<br>
                 <p>
-                    {{ form.email(size=40, value=current_user.email or '', class='mt-3', placeholder='Add email address') }}<br>
+                    {{ form.email(size=40, value=current_user.email or '', class='mt-3 alert-info p-2', style="outline:0;border:0", placeholder='Add email address') }}<br>
                 </p>
                 <p>
-            Your telephone (10 digits): {{ form.tel(size=17, pattern="[0-9]?{10}", value=current_user.tel or '', class='mb-3', placeholder='0274097985') }}<br>
+                Your telephone (10 digits): {{ form.tel(size=17, pattern="[0-9]?{14}", value=current_user.tel or '', class='mb-3 alert-info p-2', style="outline:0;border:0", placeholder='233274097985') }}<br>
                 </p>
                 <p> Want to change your password?<br>
-                    {{ form.password(size=40, placeholder='Your new password') }}<br>
+                    {{ form.password(size=40, placeholder='Your new password', class='alert-info p-2', style="outline:0;border:0") }}<br>
                 </p>
                 <p> 
-                    {{ form.confirm(size=40, class='b-none', placeholder='Repeat the new password') }}<br>
+                    {{ form.confirm(size=40, class='b-none', placeholder='Repeat the new password', class='alert-info p-2', style="outline:0;border:0") }}<br>
                 </p>
     <div onclick="history.back()" class="float-left bg-white m-1 border-dark btn">Cancel</div>
     {{ form.submit(class='btn btn-primary m-1 float-right process', value='Save') }}

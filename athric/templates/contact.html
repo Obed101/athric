@@ -5,8 +5,8 @@
     <h5 class="py-4 text-center h4">Send us a message</h5>
     <form method="post">
         {{ form.email(placeholder='Your email', class="col-md-5 d-inline p-2 alert-info mt-1", style="outline:0;border:0", value=current_user.email) }}
-        {{ form.name(placeholder='Your name 👐', class="col-md-6 float-right p-2 alert-info mt-1", style="outline:0;border:0", value=current_user.fullname) }}
-        {{ form.subject(placeholder='Message Subject', class="w-100 p-2 alert-info mt-1", style="outline:0;border:0") }}
+        {{ form.name(placeholder='Your name', class="col-md-6 float-right p-2 alert-info mt-1", style="outline:0;border:0", value=current_user.fullname) }}
+        {{ form.subject(placeholder='Message Title', class="w-100 p-2 alert-info mt-1", style="outline:0;border:0") }}
         <hr>
         {{ ckeditor.create() }}
         <div>

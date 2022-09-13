@@ -1,3 +1,7 @@
+"""
+This file contains all local utilities such as functions
+and variables to be imported for use in other files
+"""
 from flask import Flask
 from flask_ckeditor import CKEditor
 from flask_sqlalchemy import SQLAlchemy
@@ -19,7 +23,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ## Mail configurations ##
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['TESTING'] = True
+# app.config['TESTING'] = True
 app.config['SECURITY_EMAIL_SENDER'] = os.getenv('ansah_gmail')
 app.config['MAIL_USERNAME'] = os.getenv('ansah_gmail')
 app.config['MAIL_PASSWORD'] = os.getenv('gmail_password')
