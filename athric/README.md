@@ -1,4 +1,5 @@
 # ATHRIC - THE PROJECT YOU CAN'T MISS OUT
+An intelligent software created by [Obed Amoako](https://ericob.sytes.net)
 
 ![Screenshot (41)](https://user-images.githubusercontent.com/84608830/190366532-233b8ee9-2bcf-4e62-9bcf-e9156821e654.png)
 
@@ -8,6 +9,13 @@ This is a real world project. Therefore, for security and privacy reasons, some 
 
 > Setup and Installation NOT given out
 
+## Demo videos
+Watch live demos of every page (over 22 pages) in the links below
+>  
+> [**Part One - Youtube**](https://youtu.be/z3FIbhvlzHQ)  
+> [**Part Two - Youtube**](https://youtu.be/HsVuH_rm3P4)  
+> [**Part Three - Google Drive**](https://drive.google.com/file/d/1xeSTLRd2YX76gzrIRFyrupTgy-YEpwwP/view?usp=sharing)  
+>  
 
 ## How To Use - Step-by-step 
 > Will be updated from time to time. This line will contain the date of the latest update
@@ -33,6 +41,8 @@ This is a real world project. Therefore, for security and privacy reasons, some 
  
  ![Screenshot (42)](https://user-images.githubusercontent.com/84608830/190368968-3e0e6f51-d3b9-47d8-a6ac-bdebc21c52be.png)
  
+ ### Has a simple 404 Page
+ ![Screenshot (48)](https://user-images.githubusercontent.com/84608830/190393299-0d213934-5e14-468f-8e78-b12f6b7b9cab.png)
  
  ### Has a nice UI on small-size media
  
@@ -40,8 +50,9 @@ This is a real world project. Therefore, for security and privacy reasons, some 
 
  
  ### The Notice Board
- It dispolays notices for only staff members. Not ordinary users
+ It displays notices for only staff members. Not ordinary users
   - Notices that are automatically created (either by someone sending a message form `Contact Us` or someone requesting an account) dark themes
+  - *New notices (except account requests) are sent to all staff in their emails immediately*. Contact messages from users are received by **admins only**
   - If you are an administrator or you are the author of a particular notice, there will be an ellipsis icon on which you can click to view a dropdown of Edit and Delete buttons to take actions on the notice
   - Those notices can only be seen by the administrators
   - To create a new notice, you can click on the floating `+` icon on the notices page to do so
@@ -58,7 +69,7 @@ The articles page displays a list of articles created on the site ordered by dat
 - You can click on an article to read it.
 - To create a new article, you can click on the floating `+` icon on the articles page to complete that
 - If you are an administrator or you are the author of a particular article, there will be an ellipsis icon on which you can click to view a dropdown of Edit and Delete buttons to take actions on the article
-- The articles page contains a `Search Bar` in which you can type some keywords to search for articles. There is a grammatical display of the number of articles containing your search
+- The articles page contains a **Search Bar** in which you can type some keywords to search for articles. There is a grammatical display of the number of articles containing your search
 - You can search a particular category of articles to view them
 ![Screenshot (29)](https://user-images.githubusercontent.com/84608830/190383052-8473fdfe-ef26-414d-9154-9bd2cee67bcd.png)
 
@@ -66,6 +77,7 @@ The articles page displays a list of articles created on the site ordered by dat
 - The articles are categorized into different types. Users select which category an article fall into when creating them.
 - You can click on the articles button on the sidebar to select which category you want
 - If you prefer, you can search the name of a particular category to view all its articles
+- on small media, a search icon will display in the navigation bar, which you can select to display the search bar and start typing
 
 ![Screenshot (44)](https://user-images.githubusercontent.com/84608830/190378796-55032da0-2cd4-4151-8c59-b7d85b69ee3f.png)
 
@@ -94,6 +106,18 @@ You can view/edit your profile, view all users and their details, reset users' p
 - To modify your profile, you can click on the User icon on the navigation bar and select `Edit your account`
 - When editing your account, you can change your name, email, phone, and password
 - You will need to be a staff to view a list of all users
+- You will need to be an administrator to delete, add, or reset a user's password
 - If you are an administrator, you will see a trash icon and a 🔄 on the users. (trash icon won't show for administrators)
+- When the trash icon or the reset icon is selected, you will be asked to confirm to delete or reset the user's password respectively
+- To  add a new user, click on the ➕ icon flosting on the right and fill the form
+![Screenshot (43)](https://user-images.githubusercontent.com/84608830/190390830-0b6773e2-bb94-44ba-b07a-bd4f3b3056a5.png)
 
->> The complete documentation under construction
+### Requesting for a staff account or Contacting the administrators 
+You will need to provide information requested in the form that will be provided to you and submit
+
+
+Thank you for taking tiime to read to this end. Did you view the videos above? Find them [here]
+## Learn more about me
+[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022
+
+>> Please leave a star on this repository 🌟
