@@ -17,8 +17,9 @@ Watch live demos of every page (over 22 pages) in the links below
 > [**Part Three - Google Drive**](https://drive.google.com/file/d/1xeSTLRd2YX76gzrIRFyrupTgy-YEpwwP/view?usp=sharing)  
 >  
 
-## How To Use - Step-by-step 
-> Will be updated from time to time. This line will contain the date of the latest update
+## How To Use - Non-exhaustive
+
+> Will be updated regularly. This line will contain the date of the latest update
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
