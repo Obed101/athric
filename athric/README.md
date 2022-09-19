@@ -110,6 +110,8 @@ You can view/edit your profile, view all users and their details, reset users' p
 - You will need to be an administrator to delete, add, or reset a user's password
 - If you are an administrator, you will see a trash icon and a 🔄 on the users. (trash icon won't show for administrators)
 - When the trash icon or the reset icon is selected, you will be asked to confirm to delete or reset the user's password respectively
+- The reset icon will not show for the current user. A pencil that directs you to edit your account rather
+- The current user will see `(You)` appended to his name to indicate his account in the list
 - To  add a new user, click on the ➕ icon flosting on the right and fill the form
 ![Screenshot (43)](https://user-images.githubusercontent.com/84608830/190390830-0b6773e2-bb94-44ba-b07a-bd4f3b3056a5.png)
 
@@ -117,7 +119,7 @@ You can view/edit your profile, view all users and their details, reset users' p
 You will need to provide information requested in the form that will be provided to you and submit
 
 
-Thank you for taking tiime to read to this end. Did you view the videos above? Find them [here]
+Thank you for taking tiime to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
 [#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022
 
