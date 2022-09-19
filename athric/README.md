@@ -115,12 +115,19 @@ You can view/edit your profile, view all users and their details, reset users' p
 - To  add a new user, click on the ➕ icon flosting on the right and fill the form
 ![Screenshot (43)](https://user-images.githubusercontent.com/84608830/190390830-0b6773e2-bb94-44ba-b07a-bd4f3b3056a5.png)
 
-### Requesting for a staff account or Contacting the administrators 
-You will need to provide information requested in the form that will be provided to you and submit
+### Requesting for a staff account
+Click on the **Request An Acocunt** Link in the footer (will show if you're not a staff)  
+You will need to submit the form for that  
 
-
+###  Contacting the administrators 
+Click on the **Contact us** Link in the footer (will show if you're not a staff)  
+You will need to submit the form for that as well  
+  
+&nbsp;&nbsp;&nbsp;  
+&nbsp;&nbsp;  
+&nbsp;&nbsp;  
 Thank you for taking tiime to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
-[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022
-
+[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022  
+  
 >> Please leave a star on this repository 🌟
