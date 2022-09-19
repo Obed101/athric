@@ -64,7 +64,7 @@ Watch live demos of every page (over 22 pages) in the links below
   ![Screenshot (31)](https://user-images.githubusercontent.com/84608830/190374842-42aa8076-d303-4ad9-b936-bf6e8de74db5.png)
 
 ### Articles
-The articles page displays a list of articles created on the site ordered by date in a descending order, paginated into 8 items per gate
+The articles page displays a list of articles created on the site ordered by date in a descending order, paginated into 8 items per page
 - You can click on the Next and Prev or a page's number to view a particular article page
 - The articles list displays a preview of the article's cover image, a truncated (if long) article title, and a part of the article's message content
 - You can click on an article to read it.
