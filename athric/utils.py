@@ -47,7 +47,6 @@ def change_in_db(old, new):
     else:
         old = new if not new == old else old
         current_user.fullname = current_user.set_fullname()
-    db.session.commit()
     return old
 
 admins = ['director', 'manager', 'superviser', 'ceo']

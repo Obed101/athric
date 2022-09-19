@@ -3,7 +3,7 @@
 {{ form.hidden_tag() }}
 
 <div class="p-5 bg-light mt-2 m-auto border" style="width: fit-content;">
-  <h2 class="font-weight-bold text-center h4">Modifying {{ article.subject }} </h2>
+  <h2 class="font-weight-bold text-center h4">Modifying "{{ article.subject }}" </h2>
   <form method="post" enctype="multipart/form-data">
     <span>{{ form.cover(id='cover', style='display:none;') }}</span>
     {{form.subject(value=article.subject, size=25, class='btn-light my-2, py-1 small100 w-100') }}
