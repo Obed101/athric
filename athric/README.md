@@ -121,12 +121,11 @@ You will need to submit the form for that
 
 ###  Contacting the administrators 
 Click on the **Contact us** Link in the footer (will show if you're not a staff)  
-You will need to submit the form for that as well  
+You will need to submit the form for that as well
+
   
-&nbsp;&nbsp;&nbsp;  
 &nbsp;&nbsp;  
-&nbsp;&nbsp;  
-Thank you for taking tiime to read to this end. Did you view the videos above? Find them [here](#demo-videos)
+Thank you for taking time to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
 [#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022  
   
