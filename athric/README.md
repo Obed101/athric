@@ -19,7 +19,7 @@ Watch live demos of every page (over 22 pages) in the links below
 
 ## How To Use - Non-exhaustive
 
-> Will be updated regularly. This line will contain the date of the latest update
+> Updated docs: 19/09/2022
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
@@ -37,7 +37,7 @@ Watch live demos of every page (over 22 pages) in the links below
   - The `Articles` button opens a dropdown menu of all the article categories and a link to all articles
   - The `Files` button opens a dropdown menu of all the file categories
   - The `User` button opens a dropdown menu of User profile link, All users link, and a Logout link
-  - The Title Bar contains a link to the home page on the right. Content: Site name and (Current user's role or an info about the site)
+  - The Title Bar contains a link to the home page on the left. Content: Site name and (Current user's role or an info about the site)
   - The title bar also contains the title of the current page on the right
  
  ![Screenshot (42)](https://user-images.githubusercontent.com/84608830/190368968-3e0e6f51-d3b9-47d8-a6ac-bdebc21c52be.png)
