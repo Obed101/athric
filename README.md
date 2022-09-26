@@ -6,9 +6,6 @@ This is a real world project. Therefore, for security and privacy reasons, some 
 
 > Setup and Installation NOT given out
 
-
-![athric_home](https://user-images.githubusercontent.com/84608830/190021315-705e3cc6-b2a8-4da4-a437-9d70cf2ffd6c.png)
-
 ## How To Use - Step-by-step
->>> Documentation development ongoing... Stay in touch
+>> The documentation will be available here soon
 
