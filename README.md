@@ -112,7 +112,7 @@ You can view/edit your profile, view all users and their details, reset users' p
 - When the trash icon or the reset icon is selected, you will be asked to confirm to delete or reset the user's password respectively
 - The reset icon will not show for the current user. A pencil that directs you to edit your account rather
 - The current user will see `(You)` appended to his name to indicate his account in the list
-- To  add a new user, click on the ➕ icon flosting on the right and fill the form
+- To  add a new user, click on the ➕ icon floating on the right and fill the form
 ![Screenshot (52)](https://user-images.githubusercontent.com/84608830/192594842-022441ca-c9d1-482f-b2d5-9bee0a9fd778.png)
 
 ### Requesting for a staff account
