@@ -113,7 +113,7 @@ You can view/edit your profile, view all users and their details, reset users' p
 - The reset icon will not show for the current user. A pencil that directs you to edit your account rather
 - The current user will see `(You)` appended to his name to indicate his account in the list
 - To  add a new user, click on the ➕ icon floating on the right and fill the form
-![Screenshot (52)](https://user-images.githubusercontent.com/84608830/192594842-022441ca-c9d1-482f-b2d5-9bee0a9fd778.png)
+![Screenshot (53)](https://user-images.githubusercontent.com/84608830/192597023-fa37a39f-6f92-40a4-b743-bbf24190bd5f.png)
 
 ### Requesting for a staff account
 Click on the **Request An Acocunt** Link in the footer (will show if you're not a staff)  
@@ -127,6 +127,6 @@ You will need to submit the form for that as well
 &nbsp;&nbsp;  
 Thank you for taking time to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
-[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022  
+[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2021  
   
 >> Please leave a star on this repository 🌟
