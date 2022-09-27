@@ -19,7 +19,7 @@ Watch live demos of every page (over 22 pages) in the links below
 
 ## How To Use - Non-exhaustive
 
-> Updated docs: 19/09/2022
+> Updated UI for `Users` page: 27/09/2022
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
@@ -113,7 +113,7 @@ You can view/edit your profile, view all users and their details, reset users' p
 - The reset icon will not show for the current user. A pencil that directs you to edit your account rather
 - The current user will see `(You)` appended to his name to indicate his account in the list
 - To  add a new user, click on the ➕ icon flosting on the right and fill the form
-![Screenshot (43)](https://user-images.githubusercontent.com/84608830/190390830-0b6773e2-bb94-44ba-b07a-bd4f3b3056a5.png)
+![Screenshot (52)](https://user-images.githubusercontent.com/84608830/192594842-022441ca-c9d1-482f-b2d5-9bee0a9fd778.png)
 
 ### Requesting for a staff account
 Click on the **Request An Acocunt** Link in the footer (will show if you're not a staff)  
