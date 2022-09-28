@@ -1,4 +1,4 @@
-from wtforms import StringField, SubmitField, PasswordField, RadioField, SearchField
+from wtforms import StringField, SubmitField, PasswordField, RadioField, SearchField, TextAreaField
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired as required, Length, EqualTo
 from flask_ckeditor import CKEditorField
@@ -21,7 +21,7 @@ class Contact(FlaskForm):
     email = SearchField('Your Email Address', [required()])
     name = StringField()
     subject = StringField()
-    message = CKEditorField('Type in your message', [required()])
+    text = TextAreaField('Enter your message', [required()])
     submit = SubmitField('Submit Message')
 
 
@@ -52,6 +52,5 @@ class NoticeForm(FlaskForm):
     """Creates a form for Notice"""
     message = CKEditorField('Your notice body here', [
                             required('Please type your notice')])
-    subject = StringField('Your notice title', [
-                          required('Please type your notice title')])
+    subject = StringField('Your notice title')
     submit = SubmitField()

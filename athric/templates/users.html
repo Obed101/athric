@@ -7,7 +7,7 @@
 
 {% for user in users %}
 <div class="d-flex py-3 alert-success my-3 w-75 mx-auto small100" style="border-radius:25px 5px;background:linear-gradient(#ede1ee,#c5dad7);box-shadow:#c8fac6 0 2px 4px;">
-    <div class="col-2">{{ user.fullname }} </div>
+    <div class="col-2">{{ user.fullname }} {{ '(You)' if user.id==current_user.id else '' }} </div>
     <div class="col-3 pl-0">{{ user.email }} </div>
     <div class="col-3 pr-0 sm-right">{{ user.tel or '' }} </div>
     <div class="col-2 text-capitalize sm-right">{{ user.role or '' }} </div>

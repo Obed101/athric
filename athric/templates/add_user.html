@@ -8,7 +8,7 @@
                     {{ form.lastname(placeholder='Last name, Other names', class='col-md-6 mt-1 alert-info p-2', style="outline:0;border:0") }}<br>
                     {{ form.email(placeholder='His email address', class='col-md-10 my-3 alert-info p-2', style="outline:0;border:0") }}<br>
 
-                {{ form.tel(placeholder='Phone: +233243456789', class=' alert-info p-2', style="outline:0;border:0") }}
+                {{ form.tel(placeholder='Phone: 0243456789', pattern="[0-9]{10}", class='alert-info p-2', style="outline:0;border:0") }}
 
                 <select name="role" id="role" class="p-2 mb-5 alert-info" style="width: 170px;" required>
                     <option value="">Choose his role</option>

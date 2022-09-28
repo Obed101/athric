@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"> -->
 <div class="p-5 bg-light mx-auto border my-5" style="width: fit-content;">
     {{ form.hidden_tag() }}
     <h5 class="py-4 text-center h4 text-info">Request a Staff Account <p class="small text-muted">Will be reviewed by administrators</p></h5>
     
-    <form method="post" class="pb-5">
+    <form method="post" class="pb-5" onsubmit="return document.getElementById('ing').value = 'Processing...'">
         {{ form.firstname(size=40, placeholder='Your full name', required='required') }}
         <hr>
         {{ form.email(size=40, placeholder='Your email address', required='required')}} <br>
         <div>
             <div class="btn btn-light border float-left m-3 p-2" onclick="history.back()">Cancel</div>
-            {{ form.submit(class='btn btn-primary m-3 float-right', value='Send Request') }}
+            {{ form.submit(class='btn btn-primary m-3 float-right',id='ing', value='Send Request') }}
         </div> 
     </form>
 </div>

@@ -3,14 +3,14 @@
 {{ form.hidden_tag() }}
 
 <div class="p-5 bg-light mt-2 m-auto border" style="width: fit-content;">
-  <h2 class="font-weight-bold text-center h4">Modifying "{{ article.subject }}" </h2>
-  <form method="post" enctype="multipart/form-data">
+  <h2 class="font-weight-bold text-center h4">Modifying "{{ article.subject }}"</h2>
+  <form method="post" enctype="multipart/form-data" onsubmit="return document.getElementById('ing').value = 'Saving...'">
     <span>{{ form.cover(id='cover', style='display:none;') }}</span>
     {{form.subject(value=article.subject, size=25, class='btn-light my-2, py-1 small100 w-100') }}
     <label for="cover" class='btn border-dark py-1 text-dark font-weight-bold small100'style='display:none;'> Change cover image (Large, Landscape)</label>
     {{ ckeditor.create(value=article.message) }}
   <div onclick="history.back()" class="float-left bg-white mt-2 border-dark btn">Cancel</div>
-    {{ form.submit(class='btn btn-success float-right mt-2', value='Save Changes') }}
+    {{ form.submit(class='btn btn-success float-right mt-2', id='ing', value='Save Changes') }}
   </form>
   {{ ckeditor.load() }}
   {{ ckeditor.config(name='message') }}
