@@ -5,7 +5,7 @@ An intelligent software created by [Obed Amoako](https://ericob.sytes.net)
 
 ## ⚡Important Notice ⚠
 Athric is a web application I built for an Agric institution in the Ghana Ministry of Food and Agriculture.  
-This is a real world project. Therefore, for security and privacy reasons, some files like `models.py`, `app.db`, and some lines in `routes.py`, `base.html`, and static files like `images` and `videos` are not checked to source control.
+It is alive in the real world. Therefore, for security and privacy reasons, some files like `models.py`, `app.db`, and some lines in `routes.py`, `base.html`, and static files like `images` and `videos` are not checked to source control.
 
 > Setup and Installation NOT given out
 
@@ -19,7 +19,7 @@ Watch live demos of every page (over 22 pages) in the links below
 
 ## How To Use - Non-exhaustive
 
-> Updated docs: 19/09/2022
+> Updated UI for `Users` page: 27/09/2022
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
@@ -112,8 +112,8 @@ You can view/edit your profile, view all users and their details, reset users' p
 - When the trash icon or the reset icon is selected, you will be asked to confirm to delete or reset the user's password respectively
 - The reset icon will not show for the current user. A pencil that directs you to edit your account rather
 - The current user will see `(You)` appended to his name to indicate his account in the list
-- To  add a new user, click on the ➕ icon flosting on the right and fill the form
-![Screenshot (43)](https://user-images.githubusercontent.com/84608830/190390830-0b6773e2-bb94-44ba-b07a-bd4f3b3056a5.png)
+- To  add a new user, click on the ➕ icon floating on the right and fill the form
+![Screenshot (53)](https://user-images.githubusercontent.com/84608830/192597023-fa37a39f-6f92-40a4-b743-bbf24190bd5f.png)
 
 ### Requesting for a staff account
 Click on the **Request An Acocunt** Link in the footer (will show if you're not a staff)  
@@ -127,6 +127,6 @@ You will need to submit the form for that as well
 &nbsp;&nbsp;  
 Thank you for taking time to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
-[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2022  
+[#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2021  
   
 >> Please leave a star on this repository 🌟
