@@ -55,7 +55,7 @@
 <a href="{{ url_for('upload_file') }}" class="btn btn-success float-right mx-5 add"> Upload a file
 </a>
 
-<a href="{{ url_for('delete_file', category=file.f_type, id=file.id) }}" class="btn border-dark float-left mx-5 add">
+<a href="{{ url_for('delete_file', category=file.f_type, id=file.id) }}" class="btn btn-light border-dark float-left mx-5 add">
   Delete this {{file.f_type[:-1]}}
 </a>
 {% endif %}

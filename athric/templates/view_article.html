@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<div class="position-fixed btn btn-success p-3 fa fa-arrow-left rounded-circle ml-3 add" title="Go back"
+<div class="position-fixed btn border border-dark p-3 fa fa-arrow-left rounded-circle ml-3 add" title="Go back"
     onclick="history.back()" style='opacity:.5;z-index: 50;bottom:10px;'></div>
 
 <a target="_blank" {% if article.unique_name %} href="/articles/cover/{{ article.unique_name}} " {% else %}
@@ -11,8 +11,8 @@
 </a>
 
 <div class="position-relative text-center mx-auto w-100">
-    <h1 class="p-4 text-center position-relative font-weight-bold text-dark text-uppercase"
-        style="font-family: montserrat;">{{ article.subject }}
+    <h1 class="p-4 text-center position-relative font-weight-bold text-dark text-uppercase">
+        {{ article.subject }}
         <p class="text-center h6 text-muted">({% if article.user_id %}by {{
             User.query.filter_by(id=article.user_id).first().fullname or 'a deleted user' }}
             {% else %} Auto Generated {% endif %})</p>

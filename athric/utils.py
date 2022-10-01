@@ -50,10 +50,10 @@ def change_in_db(old, new):
     db.session.commit()
     return old
 
+template = {}
 admins = ['director', 'manager', 'superviser', 'ceo']
-at_categories = ['general_information', 'project_report', 'other_information']
-
-homes = [
+template['categories'] = ['general_information', 'project_report', 'other_information']
+template['homes'] = [
     {'name': 'Athric',
         'description': 'Leading Ghana\'s Agriculture (Entomology/crops)',
         'bg': '/static/images/1.jpg'},

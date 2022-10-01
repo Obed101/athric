@@ -14,15 +14,17 @@
 <div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
 {% endif %}
 {% endif %}
+
             <!-- Search Icon -->
-<div class="btn border border-light smallShow fa fa-search p-2 rounded-circle fa-2x text-white position-fixed"
-    style="bottom:.9%; right:10%;z-index:1999;opacity: .6;" onclick="showSearch()">
+<div class="col-1 btn border border-light smallShow fa fa-search p-2 rounded-circle fa-2x text-white position-fixed"
+    style="bottom:.9%; right:100px;z-index:1999;opacity: .6;" onclick="showSearch()">
 </div>
                 <!-- Search utility end -->
 
 <div class="container d-flex flex-wrap m-3 mx-auto small100" style="max-width: 90%; min-height: 200px;">
 
     <!-- Listing articles -->
+    
     {% for article in articles.items %}
     <div class='m-3 small100 col-md-5 bg-light border pb-3 hover'>
         <!-- Menu Icon And Drop Down -->
@@ -39,7 +41,7 @@
         </div>
         {% endif %}
 
-        <a href="articles/{{ article.id }}/view">
+        <a href="/articles/{{ article.id }}/view">
             <div class="text-dark p-1 w-100 font-weight-bold" title="Open this article">
                 {{ article.subject|capitalize|truncate(24) }}
             </div>
@@ -47,13 +49,13 @@
 
         <div class="flex mb-0 row ml-0 w-100">
             <div class="float-left" style="width: 22%;">
-                <a href="articles/{{ article.id }}/view" title="Open this article"
+                <a href="/articles/{{ article.id }}/view" title="Open this article"
                     style="max-height:fit-content;left: 0;">
                     <img src="{{ article.cover }}" alt="Cover image" class="w-100" style="max-height: .8in;">
                 </a>
             </div>
 
-            <a href="articles/{{ article.id }}/view" class="w-75 float-right text-dark ml-1 small"
+            <a href="/articles/{{ article.id }}/view" class="w-75 float-right text-dark ml-1 small"
                 title="Open this article">
                 <div style="font-size:14px;">{{ article.message|striptags|safe|truncate(100) }}</div>
             </a>
@@ -95,16 +97,11 @@
     </ul>
 </nav>
 
-
-<div class="h4 w-100 ml-5 pl-5 my-3">Cagetories</div>
-{% for cate in categories %}
-<a href="{{ url_for('article_categories', category=cate) }}" class="d-block w-100 ml-5">{{cate.replace('_', ' ')|capitalize}}s</a>
-{% endfor %}
 <!-- Add new Article button -->
 {% if current_user.role in admins %}
 <a href="{{ url_for('new_article') }}">
-    <div class="btn text-success position-fixed fa fa-plus-circle fa-3x add"
-        style="right: 10%; bottom:30px;z-index: 5;opacity: .6;"></div>
+    <div class="position-fixed text-success fa fa-plus-circle fa-3x add"
+        style="right: 10%; bottom:30px;z-index: 5;opacity:.6;text-shadow:white 2px 1px 2px;"></div>
 </a>
 {% endif %}
 {% endblock %}
