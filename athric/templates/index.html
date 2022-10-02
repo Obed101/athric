@@ -24,7 +24,7 @@
 {% endif %}
 <h3 class="text-center pt-5 font-weight-bold">Find Our Popular Articles</h3>
 <div class="container m-4 d-flex flex-wrap mx-auto w-100">
-  {% for article in articles[:3] %}
+  {% for article in template['most_viewed'][:3] %}
   <div class='mx-auto col-md-3 hover pt-1'>
     <a href="/articles/{{article.id}}/view">
       <img src="{{ article.cover }}" class="d-inline-block bg-dark w-100" style="max-height: 1.5in;"></img>

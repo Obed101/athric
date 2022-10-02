@@ -1,75 +1,99 @@
 {% extends 'base.html' %}
 {% block content %}
 
-            <!-- Search Bar / Button -->
-<form method="post" class="w-50 position-fixed" style='top:20px; right:25%;z-index:1999'>
-{{ form.search(placeholder='Start searching...', class='smallHidden w-100 alert-success border-success py-1',style='border:none') }}
-</form>
-{% if form.is_submitted() and form.search.data %} <div class="h4 text-center py-2">
+{% if form.is_submitted() and form.search.data %}
+  <div class="h4 py-2 mx-auto" style="max-width:fit-content;">
     {% if count %}
                                     <!-- Grammer  -->
     {{ count }} article{{ 's contain' if not count == 1 else ' contains' }} "{{ form.search.data }}"
-</div> 
-{% else %}
-<div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
+  </div> 
+  {% else %}
+    <div class="w-75 mx-auto alert alert-info">Oops🤕 No article matched your search <span onclick="history.back()" class="border-dark btn alert-primary">Go back</span></div>
+  {% endif %}
 {% endif %}
-{% endif %}
+ 
+              <!-- WHOLE CONTAINER -->
+<div class="d-flex flex-wrap m-3 mx-auto small100" style="min-height: 200px;">
+  <div class="col-md-3">
+               <!-- Search Bar / Button -->
+    <form method="post" class="d-flex">
+      {{ form.search(placeholder='Start searching...', class='alert-secondary py-1 d-inline', style='border:none;width:90%') }}
+      <button class="btn btn-dark fa fa-search" style="width:14%;border-radius:0;" type="submit"></button>
+    </form>
+                      <!-- Search utility end -->
 
-            <!-- Search Icon -->
-<div class="col-1 btn border border-light smallShow fa fa-search p-2 rounded-circle fa-2x text-white position-fixed"
-    style="bottom:.9%; right:100px;z-index:1999;opacity: .6;" onclick="showSearch()">
-</div>
-                <!-- Search utility end -->
+    <div class="mt-4 alert-secondary p-2" style="padding:15px;">
+      <h4 class="mb-3">Top Articles</h4>
+      <div class="mt-3">
+        {% for article in template['most_viewed'][:4] %}
+        <div class="py-0 my-0 a">
+          <img src="/{{ article.cover }}" class="rounded-circle float-left p-2 my-auto" alt="image" height="60"
+            width="60">
+          <p class="pt-1"><a href="{{ url_for('view_article', id=article.id) }} ">{{
+              article.subject|truncate(34) }}</a><br>
+            <span class="small">{{ article.date }}</span>
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="alert-secondary my-4 p-3">
+      <h4 class="mb-3">Categories</h4>
+      {% for cate in template['categories'] %}
+      <h6 class="my-2 border-bottom pb-2"><a href="{{ url_for('article_categories', category=cate)}} "> {{ cate.replace('_', ' ')|capitalize }}s <span
+            class="float-right fa fa-external-link-alt"></span></a></h6>
+      {% endfor %}
+    </div>
+  </div>
+  <!-- Listing articles -->
+  <div class="col-md-9 d-flex flex-wrap">
 
-<div class="container d-flex flex-wrap m-3 mx-auto small100" style="max-width: 90%; min-height: 200px;">
-
-    <!-- Listing articles -->
-    
     {% for article in articles.items %}
     <div class='m-3 small100 col-md-5 bg-light border pb-3 hover'>
-        <!-- Menu Icon And Drop Down -->
-        {% if current_user.role in admins or current_user.id == article.user_id %}
-        <div class="a dropleft d-inline float-right">
-            <div class="fa fa-ellipsis-v p-1" data-toggle="dropdown"><br></div>
-            <ul class="dropdown-menu p-2 text-success" role="menu">
-                <li><a href="{{ url_for('edit_article', id=article.id) }}" title="Edit" class="w-100 py-1 fa fa-edit">
-                        Edit</a></li>
-                <li><a href="articles/{{ article.id }}/delete" title="Delete" class="w-100 fa fa-trash-alt py-1"
-                    onclick="return confirm('Are you sure?\nYou are deleting \'\'{{article.subject}}\'\' You can\'t undo after deleting');">
-                        Delete</a></li>
-            </ul>
-        </div>
-        {% endif %}
+      <!-- Menu Icon And Drop Down -->
+      {% if current_user.role in admins or current_user.id == article.user_id %}
+      <div class="a dropleft d-inline float-right">
+        <div class="fa fa-ellipsis-v p-1" data-toggle="dropdown"><br></div>
+        <ul class="dropdown-menu p-2 text-success" role="menu">
+          <li><a href="{{ url_for('edit_article', id=article.id) }}" title="Edit" class="w-100 py-1 fa fa-edit">
+              Edit</a></li>
+          <li><a href="articles/{{ article.id }}/delete" title="Delete" class="w-100 fa fa-trash-alt py-1"
+              onclick="return confirm('Are you sure?\nYou are deleting \'\'{{article.subject}}\'\' You can\'t undo after deleting');">
+              Delete</a></li>
+        </ul>
+      </div>
+      {% endif %}
 
-        <a href="/articles/{{ article.id }}/view">
-            <div class="text-dark p-1 w-100 font-weight-bold" title="Open this article">
-                {{ article.subject|capitalize|truncate(24) }}
-            </div>
+      <a href="/articles/{{ article.id }}/view">
+        <div class="text-dark p-1 w-100 font-weight-bold" title="Open this article">
+          {{ article.subject|capitalize|truncate(24) }}
+        </div>
+      </a>
+      <div class="flex mb-0 row ml-0 w-100">
+        <div class="float-left" style="width: 22%;">
+          <a href="/articles/{{ article.id }}/view" title="Open this article" style="max-height:fit-content;left: 0;">
+            <img src="{{ article.cover }}" alt="Cover image" class="w-100" style="max-height: .8in;">
+          </a>
+        </div>
+
+        <a href="/articles/{{ article.id }}/view" class="w-75 float-right text-dark ml-1 small"
+          title="Open this article">
+          <div style="font-size:14px;">{{ article.message|striptags|safe|truncate(100) }}</div>
         </a>
+      </div>
 
-        <div class="flex mb-0 row ml-0 w-100">
-            <div class="float-left" style="width: 22%;">
-                <a href="/articles/{{ article.id }}/view" title="Open this article"
-                    style="max-height:fit-content;left: 0;">
-                    <img src="{{ article.cover }}" alt="Cover image" class="w-100" style="max-height: .8in;">
-                </a>
-            </div>
-
-            <a href="/articles/{{ article.id }}/view" class="w-75 float-right text-dark ml-1 small"
-                title="Open this article">
-                <div style="font-size:14px;">{{ article.message|striptags|safe|truncate(100) }}</div>
-            </a>
-        </div>
-
-        <div class="float-left font-weight-light">
-            {% if User.query.filter_by(id=article.user_id).first() %} {{ User.query.filter_by(id=article.user_id).first().fullname }}
-            {% elif current_user.role %} Deleted user
-            {% else %} Athric {% endif %}
-        </div>
-        <div class="float-right">{{ article.date }}
-        </div>
+      <div class="float-left font-weight-light">
+        {% if User.query.filter_by(id=article.user_id).first() %} {{
+        User.query.filter_by(id=article.user_id).first().fullname }}
+        {% elif current_user.role %} Deleted user
+        {% else %} Athric {% endif %}
+      </div>
+      <div class="float-right">{{ article.date }}
+      </div>
     </div>
-    {% endfor %}
+  {% endfor %}
+</div>
+
 </div>
 
 <!-- pagination -->
@@ -78,7 +102,6 @@
         <li class="page-item {% if articles.page == 1 %}disabled{% endif %}">
             <a href="/articles?page={{ articles.prev_num }}" class="page-link">Prev</a>
         </li>
-
         {% for page_num in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
         {% if page_num %}
         {% if articles.page == page_num %}

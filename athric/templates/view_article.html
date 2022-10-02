@@ -5,12 +5,11 @@
 <div class="position-fixed btn border border-dark p-3 fa fa-arrow-left rounded-circle ml-3 add" title="Go back"
     onclick="history.back()" style='opacity:.5;z-index: 50;bottom:10px;'></div>
 
-<a target="_blank" {% if article.unique_name %} href="/articles/cover/{{ article.unique_name}} " {% else %}
-    href="/articles/cover/{{ article.cover.split('\\')[-1] }}" {% endif %}>
+<a target="_blank" href="/articles/cover/{{ article.unique_name}} ">
     <img style="max-height: 4in;" class="w-100" src="/{{ article.cover }}">
 </a>
 
-<div class="position-relative text-center mx-auto w-100">
+<div class="position-relative text-center mx-auto">
     <h1 class="p-4 text-center position-relative font-weight-bold text-dark text-uppercase">
         {{ article.subject }}
         <p class="text-center h6 text-muted">({% if article.user_id %}by {{
@@ -19,7 +18,7 @@
     </h1>
 </div>
 
-<div class="m-5 h5 mb-4 green" style="min-height:100px;font-family: montserrat;">{{ article.message|safe }}</div>
+<div class="m-5 h5 mb-4 green w-75 small100 mx-auto" style="min-height:6in;">{{ article.message|safe }}</div>
 {% if current_user.id == article.user_id or not article.user_id and current_user.role %}
 <a href="/articles/{{ article.id }}/delete"
     onclick="return confirm('Delete \'\'{{article.subject}}\'\'?\nYou can\'t undo after deleting');"

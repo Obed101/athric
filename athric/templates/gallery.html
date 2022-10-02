@@ -5,7 +5,7 @@
   {% if title in ['documents', 'videos'] %} <p class="small h6 pt-1">Click a {{ title[:-1] }}'s name to view details</p>
   {% endif %}
 </h4>
-
+<div class="w-100" style="min-height: 5in;">
 <!-- If the file type is Video... -->
 {% if title == 'videos' %}
 {% for file in files %}
@@ -68,4 +68,5 @@
   style="right: 5%;bottom: 25px;z-index: 5; opacity: .65;">
 </a>
 {% endif %}
+</div>
 {% endblock %}
