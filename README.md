@@ -10,7 +10,8 @@ It is alive in the real world. Therefore, for security and privacy reasons, some
 > Setup and Installation NOT given out
 
 ## Demo videos
-Watch live demos of every page (over 22 pages) in the links below
+Watch live demos of every page (over 22 pages) in the links below  
+*📢 Note: These videos were recorded after the production of the first version*
 >  
 > [**Part One - Youtube**](https://youtu.be/z3FIbhvlzHQ)  
 > [**Part Two - Youtube**](https://youtu.be/HsVuH_rm3P4)  
@@ -19,7 +20,7 @@ Watch live demos of every page (over 22 pages) in the links below
 
 ## How To Use - Non-exhaustive
 
-> Updated UI for `Users` page: 27/09/2022
+> Updated images for 404 and Articles page: 02/10/2022
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
@@ -42,9 +43,9 @@ Watch live demos of every page (over 22 pages) in the links below
  
  ![Screenshot (42)](https://user-images.githubusercontent.com/84608830/190368968-3e0e6f51-d3b9-47d8-a6ac-bdebc21c52be.png)
  
- ### Has a simple 404 Page
- ![Screenshot (48)](https://user-images.githubusercontent.com/84608830/190393299-0d213934-5e14-468f-8e78-b12f6b7b9cab.png)
- 
+ ### Has a simple 404 Page  
+ ![Screenshot (57)](https://user-images.githubusercontent.com/84608830/193471979-f31698f3-1203-4600-8c47-fa756c39c310.png)
+
  ### Has a nice UI on small-size media
  
  ![Screenshot (47)](https://user-images.githubusercontent.com/84608830/190384360-c3b5329a-c6e0-4e9c-a6df-e66e258fdbae.png)
@@ -59,29 +60,28 @@ Watch live demos of every page (over 22 pages) in the links below
   - To create a new notice, you can click on the floating `+` icon on the notices page to do so
   - Notices that are deliberately created by a staff have a blue theme
   - Notices are paginated. They are displayed 4 notices per page. You can click on a page number or `Next` and `Prev` buttons to select a page
-  - You will see `- Contact` appended to the title of a message from `Contact us` page [ Update: now `(Contact)` not ` - Contact`]
   
   ![Screenshot (31)](https://user-images.githubusercontent.com/84608830/190374842-42aa8076-d303-4ad9-b936-bf6e8de74db5.png)
 
 ### Articles
 The articles page displays a list of articles created on the site ordered by date in a descending order, paginated into 8 items per page
 - You can click on the Next and Prev or a page's number to view a particular article page
+- The Articles page displays list of the top 4 most viewed articles as *Top Articles* and also the categories on the left side
 - The articles list displays a preview of the article's cover image, a truncated (if long) article title, and a part of the article's message content
 - You can click on an article to read it.
 - To create a new article, you can click on the floating `+` icon on the articles page to complete that
 - If you are an administrator or you are the author of a particular article, there will be an ellipsis icon on which you can click to view a dropdown of Edit and Delete buttons to take actions on the article
 - The articles page contains a **Search Bar** in which you can type some keywords to search for articles. There is a grammatical display of the number of articles containing your search
 - You can search a particular category of articles to view them
-![Screenshot (29)](https://user-images.githubusercontent.com/84608830/190383052-8473fdfe-ef26-414d-9154-9bd2cee67bcd.png)
+![Screenshot (58)](https://user-images.githubusercontent.com/84608830/193471943-a908f8df-d365-4144-b997-607bdf4f2930.png)
 
 #### Article categories
 - The articles are categorized into different types. Users select which category an article fall into when creating them.
 - You can click on the articles button on the sidebar to select which category you want
 - If you prefer, you can search the name of a particular category to view all its articles
-- on small media, a search icon will display in the navigation bar, which you can select to display the search bar and start typing
+- The search icon, categories, and top articles display on the left side
 
-![Screenshot (44)](https://user-images.githubusercontent.com/84608830/190378796-55032da0-2cd4-4151-8c59-b7d85b69ee3f.png)
-
+![Screenshot (55)](https://user-images.githubusercontent.com/84608830/193472113-da56d031-eaf2-45dc-96f9-7330ebf2c27a.png)
 
 ### Files
 This is a function that allows staff to upload files such as Images, Videos, and Documents
@@ -101,7 +101,6 @@ This is a function that allows staff to upload files such as Images, Videos, and
  
 ![Screenshot (35)](https://user-images.githubusercontent.com/84608830/190385043-6def8e2e-f5c4-4729-b698-1b46f1f875c7.png)
 
-
 ### Users
 You can view/edit your profile, view all users and their details, reset users' password, delete users, add users, etc. SEE HOW
 - To modify your profile, you can click on the User icon on the navigation bar and select `Edit your account`
@@ -113,6 +112,7 @@ You can view/edit your profile, view all users and their details, reset users' p
 - The reset icon will not show for the current user. A pencil that directs you to edit your account rather
 - The current user will see `(You)` appended to his name to indicate his account in the list
 - To  add a new user, click on the ➕ icon floating on the right and fill the form
+
 ![Screenshot (53)](https://user-images.githubusercontent.com/84608830/192597023-fa37a39f-6f92-40a4-b743-bbf24190bd5f.png)
 
 ### Requesting for a staff account
