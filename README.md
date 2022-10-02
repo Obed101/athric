@@ -1,7 +1,7 @@
 # ATHRIC - THE PROJECT YOU CAN'T MISS OUT
 An intelligent software created by [Obed Amoako](https://ericob.sytes.net)
 
-![Screenshot (41)](https://user-images.githubusercontent.com/84608830/190366532-233b8ee9-2bcf-4e62-9bcf-e9156821e654.png)
+![Screenshot (59)](https://user-images.githubusercontent.com/84608830/193473026-c47fc03f-5b09-404c-9a1e-aed5ef45cfae.png)
 
 ## ⚡Important Notice ⚠
 Athric is a web application I built for an Agric institution in the Ghana Ministry of Food and Agriculture.  
