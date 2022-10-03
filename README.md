@@ -1,7 +1,7 @@
 # ATHRIC - THE PROJECT YOU CAN'T MISS OUT
 An intelligent software created by [Obed Amoako](https://ericob.sytes.net)
 
-![Screenshot (59)](https://user-images.githubusercontent.com/84608830/193473026-c47fc03f-5b09-404c-9a1e-aed5ef45cfae.png)
+![Screenshot (63)](https://user-images.githubusercontent.com/84608830/193570473-e727629f-fbab-4262-9440-b41dad7dea9f.png)
 
 ## ⚡Important Notice ⚠
 Athric is a web application I built for an Agric institution in the Ghana Ministry of Food and Agriculture.  
@@ -20,7 +20,7 @@ Watch live demos of every page (over 22 pages) in the links below
 
 ## How To Use - Non-exhaustive
 
-> Updated images for 404 and Articles page: 02/10/2022
+> Updated images for 404, Home, and Articles page: 03/10/2022
 
 ### The Home Page
  It displays a slideshow of images with some brief informations about athric and some quick navigations
@@ -41,7 +41,8 @@ Watch live demos of every page (over 22 pages) in the links below
   - The Title Bar contains a link to the home page on the left. Content: Site name and (Current user's role or an info about the site)
   - The title bar also contains the title of the current page on the right
  
- ![Screenshot (42)](https://user-images.githubusercontent.com/84608830/190368968-3e0e6f51-d3b9-47d8-a6ac-bdebc21c52be.png)
+ ![Screenshot (61)](https://user-images.githubusercontent.com/84608830/193570770-c3320f01-052a-4afd-8de1-99c2fa5e70fb.png)
+
  
  ### Has a simple 404 Page  
  ![Screenshot (57)](https://user-images.githubusercontent.com/84608830/193471979-f31698f3-1203-4600-8c47-fa756c39c310.png)
@@ -74,6 +75,9 @@ The articles page displays a list of articles created on the site ordered by dat
 - The articles page contains a **Search Bar** in which you can type some keywords to search for articles. There is a grammatical display of the number of articles containing your search
 - You can search a particular category of articles to view them
 ![Screenshot (58)](https://user-images.githubusercontent.com/84608830/193471943-a908f8df-d365-4144-b997-607bdf4f2930.png)
+  
+##### An Opened Article
+![Screenshot (64)](https://user-images.githubusercontent.com/84608830/193572099-c8199eaf-2d4d-4374-aa54-6a45741fb9bf.png)
 
 #### Article categories
 - The articles are categorized into different types. Users select which category an article fall into when creating them.
