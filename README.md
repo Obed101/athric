@@ -10,7 +10,7 @@ It is alive in the real world. Therefore, for security and privacy reasons, some
 > Setup and Installation NOT given out
 
 ## Demo videos
-Watch live demos of every page (over 22 pages) in the links below  
+Watch live demos of all routes in the links below  
 *📢 Note: These videos were recorded after the production of the first version*
 >  
 > [**Part One - Youtube**](https://youtu.be/z3FIbhvlzHQ)  
