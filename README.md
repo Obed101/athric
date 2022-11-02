@@ -132,5 +132,7 @@ You will need to submit the form for that as well
 Thank you for taking time to read to this end. Did you view the videos above? Find them [here](#demo-videos)
 ## Learn more about me
 [#Obed Amoako](https://ericob.sytes.net) Software engineer, since May 2021  
+Join me on [LinkedIn](https://linkedin.com/in/ericob3d) and [Twitter](https://twitter.com/obedamoako8)  
+[ericob.sytes.net](https://ericob.sytes.net) gitves you more information about me. 
   
 >> Please leave a star on this repository 🌟
